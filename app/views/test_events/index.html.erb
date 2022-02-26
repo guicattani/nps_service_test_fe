@@ -1,10 +1,12 @@
 <div class="w-full">
   <div class="flex justify-between items-center">
     <h1 class="text-white text-lg font-bold text-4xl">Net Promoter Scores</h1>
-    <div class="flex space-x-4">
+    <div class="flex flex-col bg-gray-400 p-8 rounded-md justify-center font-bold space-x-5">
       <%= render partial: 'form' %>
     </div>
-    <%= render partial: 'form_update' %>
+    <div class="flex bg-gray-400 p-8 rounded-md font-bold">
+      <%= render partial: 'form_update' %>
+    </div>
   </div>
 
   <div class="flex flex-col">
@@ -16,7 +18,7 @@
                 <tr>
                   <th>&nbsp;</th>
                   <%- NetPromoterScore.new.attributes.keys.map(&:humanize).each do |attribute| -%>
-                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                    <th scope="col" class="text-sm font-medium text-gray-100 px-6 py-4 text-left">
                       <%= attribute.to_s %>
                     </th>
                   <%- end -%>
@@ -27,7 +29,7 @@
                   <tr class="border-b" >
                       <td></td>
                     <%- NetPromoterScore.new.attributes.keys.each do |attribute| -%>
-                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                      <td class="text-sm text-gray-100 font-light px-6 py-4 whitespace-nowrap">
                         <%= nps[attribute].nil? ? "nil" : nps[attribute] %>
                       </td>
                     <%- end -%>

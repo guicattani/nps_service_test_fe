@@ -12,7 +12,9 @@ module.exports = {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        'homeday-blue': '#386AA6',
+        'homedaylightblue': '#839BAF',
+        'homedayblue': '#386AA6',
+        'homedayblack': '#181A1B',
       },
     },
   },

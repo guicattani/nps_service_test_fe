@@ -1,15 +1,23 @@
 
 <%= form_for(:net_promoter_score, url: {controller: "test_events", action: "update_score"} ) do |form| %>
-  <div class="inline" class="my-5">
-    <%= form.label :token %>
-    <%= form.text_field :token %>
+  <div class="flex justify-center">
+    <div class="mb-1 xl:w-96">
+      <%= form.label :token, class:"form-label inline-block mb-2 text-gray-700" %>
+      <%= form.text_field :token,
+        class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none ",
+        id:"exampleFormControlInput1",
+        placeholder:"Token" %>
+    </div>
   </div>
-  <br>
-  <div class="inline" class="my-5">
-    <%= form.label :score %>
-    <%= form.text_field :score %>
+  <div class="flex justify-center">
+    <div class="mb-1 xl:w-96">
+      <%= form.label :score, class:"form-label inline-block mb-2 text-gray-700" %>
+      <%= form.text_field :score,
+        class:"form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none ",
+        id:"exampleFormControlInput1",
+        placeholder:"Score" %>
+    </div>
   </div>
-  <br>
 
   <div class="inline">
     <%= form.submit 'Update Token', class: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" %>
