@@ -1,0 +1,43 @@
+<div class="w-full">
+  <div class="flex justify-between items-center">
+    <h1 class="text-white text-lg font-bold text-4xl">Net Promoter Scores</h1>
+    <div class="flex space-x-4">
+      <%= render partial: 'form' %>
+    </div>
+    <%= render partial: 'form_update' %>
+  </div>
+
+  <div class="flex flex-col">
+    <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+      <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+        <div class="overflow-x-auto">
+          <table class="min-w-full">
+            <thead class="border-b">
+                <tr>
+                  <th>&nbsp;</th>
+                  <%- NetPromoterScore.new.attributes.keys.map(&:humanize).each do |attribute| -%>
+                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                      <%= attribute.to_s %>
+                    </th>
+                  <%- end -%>
+                </tr>
+              </thead>
+              <tbody>
+                <%- @net_promoter_scores.each do |nps| -%>
+                  <tr class="border-b" >
+                      <td></td>
+                    <%- NetPromoterScore.new.attributes.keys.each do |attribute| -%>
+                      <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
+                        <%= nps[attribute].nil? ? "nil" : nps[attribute] %>
+                      </td>
+                    <%- end -%>
+                  </tr>
+                <%- end -%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

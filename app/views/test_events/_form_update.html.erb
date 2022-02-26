@@ -1,0 +1,17 @@
+
+<%= form_for(:net_promoter_score, url: {controller: "test_events", action: "update_score"} ) do |form| %>
+  <div class="inline" class="my-5">
+    <%= form.label :token %>
+    <%= form.text_field :token %>
+  </div>
+  <br>
+  <div class="inline" class="my-5">
+    <%= form.label :score %>
+    <%= form.text_field :score %>
+  </div>
+  <br>
+
+  <div class="inline">
+    <%= form.submit 'Update Token', class: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" %>
+  </div>
+<% end %>

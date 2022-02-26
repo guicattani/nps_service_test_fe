@@ -1,0 +1,39 @@
+
+<%= form_for(:net_promoter_score, url: {controller: "test_events", action: "send_event"} ) do |form| %>
+
+  <div class="inline" class="my-5">
+    <%= form.label :type %>
+    <%= form.select :type, ["PropertySell"], include_blank: true %>
+  </div>
+  <br>
+  <div class="inline" class="my-5">
+    <%= form.label :touchpoint %>
+    <%= form.select :touchpoint, ["realtor_feedback", "homeday_service_feedback"], include_blank: true %>
+  </div>
+  <br>
+  <div class="inline" class="my-5">
+    <%= form.label :respondent_class %>
+    <%= form.select :respondent_class, ["Buyer", "Seller"], include_blank: true %>
+  </div>
+  <br>
+  <div class="inline" class="my-5">
+    <%= form.label :respondent_id %>
+    <%= form.text_field :respondent_id %>
+  </div>
+  <br>
+  <div class="inline" class="my-5">
+    <%= form.label :scorable_class %>
+    <%= form.select :scorable_class, ["Realtor", "HomedayService"], include_blank: true %>
+  </div>
+  <br>
+  <div class="inline" class="my-5">
+    <%= form.label :scorable_id %>
+    <%= form.text_field :scorable_id %>
+  </div>
+  <br>
+
+
+  <div class="inline">
+    <%= form.submit 'Create Event', class: "bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" %>
+  </div>
+<% end %>
